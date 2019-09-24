@@ -1,0 +1,340 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>Nutrition-Diet</title>
+
+        <!-- CSS -->
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway:400,700">
+        <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
+        <link rel="stylesheet" href="assets/font-awesome/css/font-awesome.min.css">
+		<link rel="stylesheet" href="assets/css/form-elements.css">
+        <link rel="stylesheet" href="assets/css/style.css">
+        <link rel="stylesheet" href="assets/css/media-queries.css">
+
+        <!-- Favicon and touch icons -->
+        <link rel="shortcut icon" href="assets/img/backgrounds/nutrition.jpg">
+        <link rel="apple-touch-icon-precomposed" sizes="144x144" href="assets/ico/apple-touch-icon-144-precomposed.png">
+        <link rel="apple-touch-icon-precomposed" sizes="114x114" href="assets/ico/apple-touch-icon-114-precomposed.png">
+        <link rel="apple-touch-icon-precomposed" sizes="72x72" href="assets/ico/apple-touch-icon-72-precomposed.png">
+        <link rel="apple-touch-icon-precomposed" href="assets/ico/apple-touch-icon-57-precomposed.png">
+
+    </head>
+
+    <body>
+		
+<!-- Top menu -->
+<nav class="navbar navbar-inverse" role="navigation">
+<div class="container">
+<div class="navbar-header">
+<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#top-navbar-1">
+	<span class="sr-only">Toggle navigation</span>
+	<span class="icon-bar"></span>
+	<span class="icon-bar"></span>
+	<span class="icon-bar"></span>
+</button>
+<a class="navbar-brand" href="index.html">Nutrition System</a>
+</div>
+<!-- Collect the nav links, forms, and other content for toggling -->
+<div class="collapse navbar-collapse" id="top-navbar-1">
+<ul class="nav navbar-nav navbar-right">
+	<li>
+		<span class="li-text">
+			Follow us: 
+		</span> 
+		<span class="li-social">
+			<a href="#" target="_blank"><i class="fa fa-facebook fa-sm"></i></a> 
+			<a href="#" target="_blank"><i class="fa fa-twitter fa-sm"></i></a> 
+			<a href="#" target="_blank"><i class="fa fa-google-plus fa-sm"></i></a>
+		</span>
+	</li>
+</ul>
+</div>
+</div>
+</nav>
+
+<!-- Description -->
+<div class="description-container">
+<div class="container">
+<div class="row">
+<div class="col-sm-12 description-title">
+	<h2>Nutrition-Diet System</h2>
+</div>
+</div>
+<div class="row">
+<div class="col-sm-12 description-text">
+	<p>
+		Know your Health 
+	</p>
+	<div class="divider-1"></div>
+</div>
+</div>
+</div>
+</div>
+
+<!-- Multi Step Form -->
+<div class="msf-container">
+<div class="container">
+<div class="row">
+<div class="col-sm-12 msf-title">
+	<h3>Fill In The Form</h3>
+	<p>Please complete the form below to get instant access to our application and all its features:</p>
+</div>
+</div>
+<div class="row">
+<div class="col-sm-12 msf-form">
+	
+	<form role="form" action="" method="post" class="form-inline">
+		<!-- ==================Analyzing meat type consumption===============================-->
+		<fieldset id="quiz1">
+			<h4>Analyze your diet consumption <span class="step">(Step 1 / 5)</span></h4>
+			<div class="form-group">
+				<label for="quiz">Select the kind of meat you consume?</label><br>
+				<select class="form-control" id="meatType" onchange="java_script_:show(this.options[this.selectedIndex].value)" required>
+					<option value="">--Select meat type--</option>
+					<option id='redMeat' value="red meat">Red meat</option>
+					<option id="whiteMeat" value="white meat">White meat</option>
+					<option id="noMeat" value="no meat">I dont take meat</option>
+				</select>
+			</div>
+	
+			<br>
+			<button type="button" class="btn btn-next">Next <i class="fa fa-angle-right"></i></button>
+		</fieldset>
+		
+		<!-- ===========if the user selects red meat, ask how frequently====== 
+		display this block of red Meat, otherwise display block of white meat
+		-->
+		<fieldset id='rm'>
+			<h4>How frequently do you take red meat <span class="step">(Step 3 / 5)</span></h4>
+			<div class="form-group">
+				<label for="about-you">You can only selct one option:</label><br>
+			</div>
+		<br>
+		
+		<div class="radio-buttons-1">
+			<label class="radio-inline">
+				<input type="radio" name="radio-buttons-1-options" value="radio-buttons-1-option-1"> 123 a Day
+			</label>
+			<label class="radio-inline">
+				<input type="radio" name="radio-buttons-1-options" value="radio-buttons-1-option-1"> 123 a week
+			</label>
+			<label class="radio-inline">
+				<input type="radio" name="radio-buttons-1-options" value="radio-buttons-1-option-2"> 123 a Month
+			</label>
+			<label class="radio-inline">
+				<input type="radio" name="radio-buttons-1-options" value="radio-buttons-1-option-3"> 123 A year
+			</label>
+		</div>
+
+			<br>
+			<button type="button" class="btn btn-previous"><i class="fa fa-angle-left"></i> Previous</button>
+			<button type="button" id="btnRed" onclick="showMe();" class="btn btn-next" id="">Next <i class="fa fa-angle-right"></i></button>
+		</fieldset>
+<!--===========================================ask user about white meat============================= -->
+		<fieldset id='wm' class="wm">
+			<h4>How frequently do you take White meat <span class="step" id="show">(Step 4 / 5)</span></h4>
+			<div class="form-group">
+				<label for="about-you">You can only selct one option:</label><br>
+			</div>
+			<br>
+
+			<div class="radio-buttons-1">
+				<label class="radio-inline">
+					<input type="radio" name="radio-buttons-1-options" value="radio-buttons-1-option-1"> 123 a Day
+				</label>
+				<label class="radio-inline">
+					<input type="radio" name="radio-buttons-1-options" value="radio-buttons-1-option-1"> 123 a week
+				</label>
+				<label class="radio-inline">
+					<input type="radio" name="radio-buttons-1-options" value="radio-buttons-1-option-2"> 123 a Month
+				</label>
+				<label class="radio-inline">
+					<input type="radio" name="radio-buttons-1-options" value="radio-buttons-1-option-3"> 123 A year
+				</label>
+			</div>
+
+			<br>
+			<button type="button" class="btn btn-previous"><i class="fa fa-angle-left"></i> Previous</button>
+			<button type="button" class="btn btn-next">Next <i class="fa fa-angle-right"></i></button>
+		</fieldset>
+		<!-- ==========================Vegetable=============================================== -->
+		<fieldset id='vege'>
+			<h4>Vegetables Consumption<span class="step">(Step 2 / 5)</span></h4>
+			<div class="form-group">
+				<label for="birth-city">Are you a vegeterian?</label><br>
+				<select class="form-control" id="vegeType" required>
+					<option value="">--Option--</option>
+					<option value="yes">Yes</option>
+					<option value="no">No</option>
+					<option value="mybe">Maybe</option>
+				</select>				                
+				
+			</div>
+
+			<br>
+			<button type="button" class="btn btn-previous"><i class="fa fa-angle-left"></i> Previous</button>
+			<button type="button" class="btnVege btn btn-next">Next <i class="fa fa-angle-right"></i></button>
+		</fieldset>
+	<!--==============================================ask user about Vegetables============================= -->
+		<fieldset id='vg'>
+			<h4>How frequently do you take Vegetables <span class="step">(Step 4 / 5)</span></h4>
+			<div class="form-group">
+					<label for="about-you">You can only selct one option:</label><br>
+				</div>
+			<br>
+
+			<div class="radio-buttons-1">
+				<label class="radio-inline">
+					<input type="radio" name="radio-buttons-1-options" value="radio-buttons-1-option-1"> 123 a Day
+				</label>
+				<label class="radio-inline">
+					<input type="radio" name="radio-buttons-1-options" value="radio-buttons-1-option-1"> 123 a week
+				</label>
+				<label class="radio-inline">
+					<input type="radio" name="radio-buttons-1-options" value="radio-buttons-1-option-2"> 123 a Month
+				</label>
+				<label class="radio-inline">
+					<input type="radio" name="radio-buttons-1-options" value="radio-buttons-1-option-3"> 123 A year
+				</label>
+			</div>
+
+			<br>
+			<button type="button" class="btn btn-previous"><i class="fa fa-angle-left"></i> Previous</button>
+			<button type="button" class="btn btn-next">Next <i class="fa fa-angle-right"></i></button>
+			</fieldset>
+<!-- =================================details about / user information==================== -->
+		<fieldset class='about'>
+			<h4>About You <span class="step">(Step 5 / 5)</span></h4>
+			<div class="form-group">
+				<label for="about-you">Tell us a bit about yourself:</label><br>
+				<textarea name="about-you" placeholder="Tell us about yourself, a brief bio" class="about-you form-control" id="about-you"></textarea>
+			</div>
+			<br>
+			<div class="form-group">
+					<label for="about-you">Full Name:</label><br>
+					<input type="text" name="fname" class="form-control" placeholder="full name" id="fname">
+			</div>
+			<div class="form-group">
+				<label for="about-you">Email Address:</label><br>
+				<input type="text" name="email" class="form-control" placeholder="email address" id="email">
+
+			</div>
+			<div class="form-group">
+				<label for="about-you">Phone:</label><br>
+				<input type="text" name="phone" class="form-control" placeholder="+2547"id="phone">
+			</div>
+		
+			<br>
+			<button type="button" class="btn btn-previous"><i class="fa fa-angle-left"></i> Previous</button>
+			<button type="button" class="btn btn-next">Next <i class="fa fa-angle-right"></i></button>
+		</fieldset>
+		
+		<fieldset>
+			<button type="button" class="btn btn-previous"><i class="fa fa-angle-left"></i> Previous</button>
+			<button type="submit" class="btn">Submit</button>
+		</fieldset>
+		
+	</form>
+	
+</div>
+</div>
+</div>
+</div>
+<script>
+
+  const show=(aval)=>{
+	  if(aval=="red meat"){
+
+		quiz1.style.display='none';
+		rm.style.display='inline-block';
+		vg.style.display='none';
+		Form.fileURL.focus();
+	  }else if(aval=='white meat'){
+
+		quiz1.style.display='none';
+	 	wm.style.display='inline-block';
+		rm.style.display='none';
+		vg.style.display='none';
+	  }else if(aval=='no meat'){
+		quiz1.style.display="none";
+		rm.style.display='none';
+		wm.style.display='none';
+		vg.style.display='inline-block';
+			
+	  }else{
+		  $('.about').show();
+	  }
+
+	  const showMe=()=>{
+		  document.getElementById('show').innerHTML='Hey you';
+	  }
+	  
+
+	//   if user select red meats it display the how frequency option and when clock the next button, it should hide the other elements.
+// 	const click=(h)=>{
+// 		let h=document.getElementById('meatType');
+// 		if(h.value=='red meat'){
+// 			$('#wm').hide();
+// 			$('#rm').hide();
+// 			$('#vege').show();
+// 		}
+// 		else if(h.value=='white meat'){
+// 				$('#wm').hide();
+// 				$('#rm').hide();
+// 				$('#vege').show();
+// 			}
+// 		else{
+// 			$('#wm').hide();
+// 			$('#rm').hide();
+// 			$('#vege').show();
+// 		}
+// 	}
+
+// 	  if(aval=='red meat'){
+// 		  const whiteMeat=document.getElementById('wm');
+// 		  whiteMeat.classList.remove('wm');
+// 	  }
+// 	  else{
+// 		const redMeat=document.getElementById('rm');
+// 		  redMeat.classList.show('rm');	  
+// 	  }
+//   }
+
+//   const clicked=()=>{
+// 	  const btnMe=document.getElementById('btnRed');
+// 	  btnMe.addEventListener('click', none);
+// 		if(e){
+// 			wm.style.display='none';
+// 			vg.style.display='inline-block'
+// 		}	 
+  }
+
+	  document.getElementById('btnRed').onclick=function() {
+		  myFunction();
+	  }
+
+  function myFunction(){
+	
+	 document.getElementsById('wm').style.display='none';
+	 document.getElementsById('vege').style.display='inline-block';
+  }
+</script>
+
+<!-- Javascript -->
+<script src="assets/js/jquery-1.11.1.min.js"></script>
+<script src="assets/bootstrap/js/bootstrap.min.js"></script>
+<script src="assets/js/jquery.backstretch.min.js"></script>
+<script src="assets/js/scripts.js"></script>
+
+<!--[if lt IE 10]>
+<script src="assets/js/placeholder.js"></script>
+<![endif]-->
+
+</body>
+
+</html>
